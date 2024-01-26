@@ -14,53 +14,14 @@ Foundry consists of:
 https://book.getfoundry.sh/
 
 ## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+### Cheatcode reference
+1. prank
+    ``` 
+    function prank(address) external;
+    Description: Sets msg.sender to the specified address for the next call
+    ```
+2. assume
+   ```
+   function assume(bool) external;
+    Description: 
+   ```
