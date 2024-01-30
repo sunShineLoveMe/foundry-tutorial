@@ -2,5 +2,9 @@
 src = "src"
 out = "out"
 libs = ["lib"]
+build_info = true
+extra_output = ["storageLayout"]
+[rpc_endpoints]
+sepolia = "https://sepolia.infura.io/v3/1d49a9317ab048ef97ab7c826a1160c8"
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options

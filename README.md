@@ -51,3 +51,10 @@ https://book.getfoundry.sh/
    function assume(bool) external;
     Description: 
    ```
+
+### 相关问题以及解决方案
+1. 安装依赖包
+   ```
+   forge install OpenZeppelin/openzeppelin-contracts --no-commit
+   ```
+   注意末尾的--no-commit标志，这个意思是你的项目文件已经与git存储库关联，所以我们必须指定不提交任何内容。
