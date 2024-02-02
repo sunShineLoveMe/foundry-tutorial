@@ -41,16 +41,60 @@ https://book.getfoundry.sh/
     - Git submodule 通常用于将另一个仓库作为项目的一部分引入，并允许对其进行修改和贡献
     - 依赖库的引用通常用于在构建或运行时获取所需的库或包，而不需要对其进行修改
 ### Cheatcode reference
+Foundry有一套作弊码，它可以对区块链的状态进行修改，以方便在测试的时候使用。这些代码可以直接执行合约。
 1. prank
     ``` 
     function prank(address) external;
-    Description: Sets msg.sender to the specified address for the next call
+    设置地址作为下一次调用的msg.sender;
     ```
 2. assume
    ```
    function assume(bool) external;
-    Description: 
    ```
+3. warp
+   ```
+   vm.warp(uint256) external;
+   设置 block.timestamp
+   ```
+4. roll
+   ```
+   vm.roll(uint256) external;
+   设置 block.height
+   ```
+5. startPrank
+   ```
+   vm.startPrank(uint256) external;
+   设置地址作为所有后续调用的msg.sender
+   ```
+6. stopPrank
+   ```
+   vm.stopPrank(uint256) external;
+   重置后续调用msg.sender为address(this)
+   ```
+7. deal
+   ```
+   vm.deal(address, uint256) external
+   设置一个地址的余额，参数：（who，newBalance）
+   ```
+8. expectRevert
+   ```
+   vm.expectRevert(bytes calldata) external; 期待下次调用时出现错误
+   ```
+9. record
+   ```
+   vm.record() external; 记录所有存储的读和写
+   ```            
+10. expectEmit
+   ```
+   vm.expectEmit(true, false, false, false); emit Transfer(address(this)); transfer(); 检查事件主题1在两个事件中是否相等
+   ``` 
+11. load
+   ```
+   vm.load(address,bytes32)外部返回(bytes32); 从一个地址加载一个存储槽
+   ``` 
+12. store
+   ```
+   vm.store(address,bytes32,bytes32) external; 将一个值存储到一个地址的存储槽中，参数（who, slot, value）     
 
 ### 相关问题以及解决方案
 1. 安装依赖包
