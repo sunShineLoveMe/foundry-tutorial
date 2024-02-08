@@ -124,4 +124,8 @@ Foundry有一套作弊码，它可以对区块链的状态进行修改，以方�
    标准库封装了很多好的方法直接使用，分为四个部分
    - Vm.sol:提供作弊码（Cheatcodes）
    - console.sol和console2.sol Hardhat 风格的日志记录功能，console2.sol包含console.sol 的补丁
-   - Test.sol：DSTest 的超集，包含标准库、作弊码实例和Foundry控制台.   
+   - Test.sol：DSTest 的超集，包含标准库、作弊码实例和Foundry控制台.  
+6. 安装chainlink工具包
+   ```
+   forge install smartcontractkit/chainlink-brownie-contracts --no-commit
+   ```  
